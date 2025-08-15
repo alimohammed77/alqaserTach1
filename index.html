@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القصر تك - محل التكنولوجيا وأنظمة المراقبة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <!--icon-alqaser-tech-->
+                        <img src="products/icon-alqaser-tech.png" alt="شعار القصر تك" class="h-8 w-8 mr-2" style="display:inline-block;vertical-align:middle;">
+                        <span class="text-xl font-bold text-blue-800">القصر تك</span>
+                    </div>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-blue-600">الرئيسية</a>
+                        <a href="#products" class="nav-link text-gray-700 hover:text-blue-600">المنتجات</a>
+                        <a href="#about" class="nav-link text-gray-700 hover:text-blue-600">من نحن</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600">تواصل معنا</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="md:hidden text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-blue-50 to-white py-12">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">القصر تك للتكنولوجيا</h1>
+                <p class="text-lg text-gray-700 mb-6">متخصصون في أنظمة المراقبة وأجهزة الشبكات والكمبيوتر والإنترنت الفضائي والمودمات والكابلات واكسسوارات الحاسوب بأفضل الأسعار وجودة عالية</p>
+                <div class="flex space-x-4">
+                    <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium">تصفح المنتجات</a>
+                    <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium">تواصل معنا</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="products/alqaser1.jpg" alt="Technology Products" loading="lazy" class="rounded-lg shadow-xl w-full w-full h-full object-cover">
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-full shadow-lg floating-tech">
+                    <img src="products/icon-alqaser-tech.png" alt="شعار القصر تك" class="h-8 w-8 mr-2 fas fa-robot text-blue-600 text-4xl " style="display:inline-block;vertical-align:middle;"> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">أقسام منتجات المحل</h2>
+            <div class="scroll-container overflow-x-auto pb-4">
+                <div class="flex space-x-6 w-max mx-auto">
+                    <div class="category-tab bg-blue-50 rounded-xl p-6 text-center min-w-[200px] cursor-pointer" onclick="filterProducts('all')">
+                        <i class="fas fa-boxes text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="font-bold text-lg text-blue-800">جميع المنتجات</h3>
+                    </div>
+                    <div class="category-tab bg-blue-50 rounded-xl p-6 text-center min-w-[200px] cursor-pointer" onclick="filterProducts('surveillance')">
+                        <i class="fas fa-video text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="font-bold text-lg text-blue-800">كاميرات المراقبة</h3>
+                    </div>
+                    <div class="category-tab bg-blue-50 rounded-xl p-6 text-center min-w-[200px] cursor-pointer" onclick="filterProducts('networking')">
+                        <i class="fas fa-network-wired text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="font-bold text-lg text-blue-800">أجهزة الشبكات</h3>
+                    </div>
+                    <div class="category-tab bg-blue-50 rounded-xl p-6 text-center min-w-[200px] cursor-pointer" onclick="filterProducts('computers')">
+                        <i class="fas fa-laptop text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="font-bold text-lg text-blue-800">أجهزة الكمبيوتر</h3>
+                    </div>
+                    <div class="category-tab bg-blue-50 rounded-xl p-6 text-center min-w-[200px] cursor-pointer" onclick="filterProducts('computers')">
+                        <i class="fas fa-mouse text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="font-bold text-lg text-blue-800">اكسسوارات  الكمبيوتر </h3>
+                    </div>
+                    <div class="category-tab bg-blue-50 rounded-xl p-6 text-center min-w-[200px] cursor-pointer" onclick="filterProducts('satellite')">
+                        <i class="fas fa-satellite text-blue-600 text-4xl mb-4"></i>
+                        <h3 class="font-bold text-lg text-blue-800">الإنترنت الفضائي</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">منتجاتنا</h2>
+            
+            <!-- Computers Category - الكمبيوترات -->
+            <div class="mb-12" id="computers-section">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-blue-700 flex items-center">
+                        <i class="fas fa-laptop mr-2"></i>
+                        أجهزة الكمبيوتر
+                    </h3>
+                    <button class="text-blue-600 hover:text-blue-800 font-medium" onclick="toggleCategory('computers')">
+                        عرض الكل <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="scroll-container overflow-x-auto pb-4">
+                    <div class="flex space-x-6 w-max">
+                        <!-- 1منتج اجهزة الكمبيوتر -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="computers">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Dell Laptop" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">لابتوب ديل اكس بي اس 13</h4>
+                            <p class="text-gray-600 text-sm mb-3">معالج i7، 16GB رام، 512GB SSD، شاشة 13.3 بوصة</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">3,499 ر.س</span>
+                                <button onclick="whatsappOrder('لابتوب ديل اكس بي اس 13')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج اجهزة الكمبيوتر 2 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="computers">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="HP Laptop" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">لابتوب اتش بي بافيليون</h4>
+                            <p class="text-gray-600 text-sm mb-3">معالج i5، 8GB رام، 256GB SSD، شاشة 15.6 بوصة</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">2,899 ر.س</span>
+                                <button onclick="whatsappOrder('لابتوب اتش بي بافيليون')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج اجهزة الكمبيوتر 3 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="computers">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Gaming PC" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">كمبيوتر جيمينج</h4>
+                            <p class="text-gray-600 text-sm mb-3">معالج i9، 32GB رام، 1TB SSD، كارت شاشة RTX 3080</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">8,999 ر.س</span>
+                                <button onclick="whatsappOrder('كمبيوتر جيمينج')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!--منتج اجهزة الكمبيوتر 4 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="computers">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="All-in-One PC" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">كمبيوتر All-in-One</h4>
+                            <p class="text-gray-600 text-sm mb-3">معالج i5، 12GB رام، 512GB SSD، شاشة 23.8 بوصة</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">4,299 ر.س</span>
+                                <button onclick="whatsappOrder('كمبيوتر All-in-One')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Surveillance Category - كاميرات المراقبة -->
+            <div class="mb-12" id="surveillance-section">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-blue-700 flex items-center">
+                        <i class="fas fa-video mr-2"></i>
+                        كاميرات المراقبة
+                    </h3>
+                    <button class="text-blue-600 hover:text-blue-800 font-medium" onclick="toggleCategory('surveillance')">
+                        عرض الكل <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="scroll-container overflow-x-auto pb-4">
+                    <div class="flex space-x-6 w-max">
+
+                        <!-- 1منتج كاميرات المراقبة -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="surveillance">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Hikvision Camera" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">كاميرا هاكفيجن 4MP</h4>
+                            <p class="text-gray-600 text-sm mb-3">كاميرا مراقبة خارجية، دقة 4 ميجابكسل، رؤية ليلية 30 متر</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">399 ر.س</span>
+                                <button onclick="whatsappOrder('كاميرا هاكفيجن 4MP')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج كاميرات المراقبة 2 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="surveillance">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="DVR System" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">نظام مراقبة 8 قنوات</h4>
+                            <p class="text-gray-600 text-sm mb-3">جهاز DVR مع 8 كاميرات، تخزين 1TB، دعم الهاتف المحمول</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">2,499 ر.س</span>
+                                <button onclick="whatsappOrder('نظام مراقبة 8 قنوات')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج كاميرات المراقبة 3 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="surveillance">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Wireless Camera" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">كاميرا لاسلكية</h4>
+                            <p class="text-gray-600 text-sm mb-3">كاميرا IP لاسلكية، دقة 1080p، مدمج مع ميكروفون</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">599 ر.س</span>
+                                <button onclick="whatsappOrder('كاميرا لاسلكية')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج كاميرات المراقبة 4 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="surveillance">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="PTZ Camera" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">كاميرا PTZ متحركة</h4>
+                            <p class="text-gray-600 text-sm mb-3">كاميرا مراقبة متحركة، زوم بصري 20x، دقة 5MP</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">1,299 ر.س</span>
+                                <button onclick="whatsappOrder('كاميرا PTZ متحركة')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Networking Category - أجهزة الشبكات -->
+            <div class="mb-12" id="networking-section">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-blue-700 flex items-center">
+                        <i class="fas fa-network-wired mr-2"></i>
+                        أجهزة الشبكات
+                    </h3>
+                    <button class="text-blue-600 hover:text-blue-800 font-medium" onclick="toggleCategory('networking')">
+                        عرض الكل <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="scroll-container overflow-x-auto pb-4">
+                    <div class="flex space-x-6 w-max">
+
+                        <!-- منتج اجهزة الشبكات 1  -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="networking">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="WiFi Router" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">راوتر واي فاي 6</h4>
+                            <p class="text-gray-600 text-sm mb-3">راوتر ثنائي النطاق، سرعة 1800Mbps، 4 منافذ LAN</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">349 ر.س</span>
+                                <button onclick="whatsappOrder('راوتر واي فاي 6')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!--منتج اجهزة الشبكات2 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="networking">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Network Switch" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">سويتش شبكة 16-Port</h4>
+                            <p class="text-gray-600 text-sm mb-3">سويتش جيجابت إيثرنت، 16 منفذ، دعم PoE</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">799 ر.س</span>
+                                <button onclick="whatsappOrder('سويتش شبكة 16-Port')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!--منتج اجهزة الشبكات3 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="networking">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Access Point" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">نقطة وصول لاسلكية</h4>
+                            <p class="text-gray-600 text-sm mb-3">نقطة وصول AC1200، دعم PoE، تغطية واسعة</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">499 ر.س</span>
+                                <button onclick="whatsappOrder('نقطة وصول لاسلكية')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج اجهزة الشبكات4 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="networking">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="NAS Storage" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">خادم تخزين NAS</h4>
+                            <p class="text-gray-600 text-sm mb-3">خادم تخزين شبكي، 2 باي، دعم RAID، سعة 8TB</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">2,199 ر.س</span>
+                                <button onclick="whatsappOrder('خادم تخزين NAS')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Satellite Internet Category - الانترنت الفضائي -->
+            <div class="mb-12" id="satellite-section">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-blue-700 flex items-center">
+                        <i class="fas fa-satellite mr-2"></i>
+                        الإنترنت الفضائي
+                    </h3>
+                    <button class="text-blue-600 hover:text-blue-800 font-medium" onclick="toggleCategory('satellite')">
+                        عرض الكل <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="scroll-container overflow-x-auto pb-4">
+                    <div class="flex space-x-6 w-max">
+
+                        <!-- 1 منتج الانترنت الفضائي -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="satellite">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Satellite Dish" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">طبق إنترنت فضائي</h4>
+                            <p class="text-gray-600 text-sm mb-3">طبق 1.2 متر مع وحدة استقبال، سرعة تصل إلى 50Mbps</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">1,899 ر.س</span>
+                                <button onclick="whatsappOrder('طبق إنترنت فضائي')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج الانترنت الفضائي 2-->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="satellite">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Satellite Modem" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">مودم إنترنت فضائي</h4>
+                            <p class="text-gray-600 text-sm mb-3">مودم ساتلايت، دعم WiFi، 4 منافذ LAN</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">799 ر.س</span>
+                                <button onclick="whatsappOrder('مودم إنترنت فضائي')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج الانترنت الفضائي 3-->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="satellite">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Satellite Package" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">باقة إنترنت فضائي</h4>
+                            <p class="text-gray-600 text-sm mb-3">باقة شهرية، سرعة 20Mbps، بيانات غير محدودة</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">399 ر.س/شهر</span>
+                                <button onclick="whatsappOrder('باقة إنترنت فضائي')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج الانترنت الفضائي 4 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="satellite">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Portable Satellite" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">إنترنت فضائي متنقل</h4>
+                            <p class="text-gray-600 text-sm mb-3">جهاز متنقل، سرعة 10Mbps، بطارية تدوم 8 ساعات</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">3,499 ر.س</span>
+                                <button onclick="whatsappOrder('إنترنت فضائي متنقل')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+               <!-- computer accessories- اكسسوارات الحاسوب-->
+            <div class="mb-12" id="satellite-section">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-blue-700 flex items-center">
+                        <i class="fas fa-mouse mr-2 "></i>
+                       اكسسوارات الحاسوب
+                    </h3>
+                    <button class="text-blue-600 hover:text-blue-800 font-medium" onclick="toggleCategory('satellite')">
+                        عرض الكل <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                </div>
+                <div class="scroll-container overflow-x-auto pb-4">
+                    <div class="flex space-x-6 w-max">
+
+                        <!-- منتج اكسسوارات الحاسوب 1 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="satellite">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Satellite Dish" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">ماوس</h4>
+                            <p class="text-gray-600 text-sm mb-3">طبق 1.2 متر مع وحدة استقبال، سرعة تصل إلى 50Mbps</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">1,899 ر.س</span>
+                                <button onclick="whatsappOrder('طبق إنترنت فضائي')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج اكسسوارات الحاسوب 2 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="satellite">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Satellite Modem" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2"> ماوس 2  </h4>
+                            <p class="text-gray-600 text-sm mb-3">مودم ساتلايت، دعم WiFi، 4 منافذ LAN</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">799 ر.س</span>
+                                <button onclick="whatsappOrder('مودم إنترنت فضائي')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج اكسسوارات الحاسوب 3 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="satellite">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Satellite Package" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">كيبورد</h4>
+                            <p class="text-gray-600 text-sm mb-3">باقة شهرية، سرعة 20Mbps، بيانات غير محدودة</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">399 ر.س/شهر</span>
+                                <button onclick="whatsappOrder('باقة إنترنت فضائي')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- منتج اكسسوارات الحاسوب 4 -->
+                        <div class="product-card bg-white rounded-lg shadow-md p-4 w-64 flex-shrink-0" data-category="satellite">
+                            <div class="h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                                <img src="products/" alt="Portable Satellite" loading="lazy" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-lg text-blue-800 mb-2">سماعة</h4>
+                            <p class="text-gray-600 text-sm mb-3">جهاز متنقل، سرعة 10Mbps، بطارية تدوم 8 ساعات</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-blue-600">3,499 ر.س</span>
+                                <button onclick="whatsappOrder('إنترنت فضائي متنقل')" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                    <i class="fab fa-whatsapp ml-1"></i> اطلب الآن
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <!-- Bank Accounts Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">حساباتنا البنكية</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- القطيبي -->
+                <div class="bg-blue-50 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="products/" alt="Al Rajhi Bank" loading="lazy" class="h-10 mr-3">
+                        <h3 class="font-bold text-lg text-blue-800">بنك القطيبي</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-gray-700"><span class="font-medium">اسم الحساب:</span> القصر تك للتكنولوجيا</p>
+                        <p class="text-gray-700"><span class="font-medium">رقم الحساب:</span> SA0380000000001234567890</p>
+                        <p class="text-gray-700"><span class="font-medium">IBAN:</span> SA0380000000001234567890</p>
+                    </div>
+                </div>
+                
+                <!-- الكريمي -->
+                <div class="bg-blue-50 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="products/" alt="Al Bilad Bank" loading="lazy" class="h-10 mr-3">
+                        <h3 class="font-bold text-lg text-blue-800">بنك الكريمي</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-gray-700"><span class="font-medium">اسم الحساب:</span> القصر تك للتكنولوجيا</p>
+                        <p class="text-gray-700"><span class="font-medium">رقم الحساب:</span> SA0380000000009876543210</p>
+                        <p class="text-gray-700"><span class="font-medium">IBAN:</span> SA0380000000009876543210</p>
+                    </div>
+                </div>
+                
+                <!-- الشمول-->
+                <div class="bg-blue-50 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="products/" alt="Al Jazira Bank" loading="lazy" class="h-10 mr-3">
+                        <h3 class="font-bold text-lg text-blue-800">بنك الشمول</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-gray-700"><span class="font-medium">اسم الحساب:</span> القصر تك للتكنولوجيا</p>
+                        <p class="text-gray-700"><span class="font-medium">رقم الحساب:</span> SA0380000000004567891230</p>
+                        <p class="text-gray-700"><span class="font-medium">IBAN:</span> SA0380000000004567891230</p>
+                    </div>
+                </div>
+
+                <!--صرافة صلاح بن عوض-->
+                <div class="bg-blue-50 rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="products/" alt="Al Jazira Bank" loading="lazy" class="h-10 mr-3">
+                        <h3 class="font-bold text-lg text-blue-800">صرافة صلاح بن عوض</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-gray-700"><span class="font-medium">اسم الحساب:</span> القصر تك للتكنولوجيا</p>
+                        <p class="text-gray-700"><span class="font-medium">رقم الحساب:</span> SA0380000000004567891230</p>
+                        <p class="text-gray-700"><span class="font-medium">IBAN:</span> SA0380000000004567891230</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold text-blue-800 mb-6">من نحن</h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        القصر تك هو محل متخصص في مجال التكنولوجيا وأنظمة المراقبة وأجهزة الشبكات والكمبيوتر والإنترنت الفضائي والمودمات والكابلات واكسسوارات الحاسوب. نقدم لكم أحدث المنتجات بأفضل الأسعار وجودة عالية.
+                    </p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        نسعى دائماً لتقديم أفضل الحلول التقنية لعملائنا الكرام، مع ضمان الجودة والكفاءة في جميع منتجاتنا وخدماتنا.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        فريقنا من المهندسين والفنيين المتخصصين جاهزون لتقديم الدعم الفني والاستشارات اللازمة لضمان رضاكم التام.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">لماذا تختارنا؟</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-check-circle text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-700">منتجات أصلية بضمان من الشركة المصنعة</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-check-circle text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-700">أسعار تنافسية في السوق</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-check-circle text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-700">خدمة ما بعد البيع ودعم فني متكامل</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-check-circle text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-700">توصيل سريع لكافة أنحاء المحافظات في اليمن </p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-check-circle text-blue-600"></i>
+                                </div>
+                                <p class="text-gray-700">فريق متخصص لتركيب الأنظمة وتشغيلها</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">تواصل معنا الاااااان عبر</h2>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <div class="bg-blue-50 rounded-xl p-6 h-full">
+                        <h3 class="text-xl font-bold text-blue-800 mb-6">معلومات التواصل</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-800 mb-1">العنوان</h4>
+                                    <p class="text-gray-700">الجمهورية اليمنية، عدن, المنصورة, شارع القصر, بجانب انيس فون للجوالات</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-800 mb-1">الهاتف</h4>
+                                    <p class="text-gray-700">02-349041</p>
+                                    <p class="text-gray-700">771314930</p>
+                                    <p class="text-gray-700">780385761</p>
+                                    <p class="text-gray-700">777801166</p>
+                                    <p class="text-gray-700">772132125</p>
+                                    <p class="text-gray-700">773412760</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-800 mb-1">البريد الإلكتروني</h4>
+                                    <p class="text-gray-700">al.qaser.teck@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-800 mb-1">ساعات العمل</h4>
+                                    <p class="text-gray-700">من السبت إلى الخميس: </p>
+                                    <p class="text-gray-700">  9:30  الصباح الى 1:00  الظهر </p>
+                                    <p class="text-gray-700"> 4:00  العصر الى 10:00  المساء </p>
+                                    <p class="text-gray-700">الجمعة: مغلق</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-blue-800 mt-8 mb-4">وسائل التواصل الاجتماعي</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/967771314930" class="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 hover:bg-blue-500 text-white p-3 rounded-full">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-blue-50 rounded-xl p-6 h-full">
+                        <h3 class="text-xl font-bold text-blue-800 mb-6">أرسل لنا رسالة</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-1">الاسم الكامل</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-1">البريد الإلكتروني</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 mb-1">رقم الهاتف</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-700 mb-1">الموضوع</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-1">الرسالة</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium w-full">إرسال الرسالة</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="products/icon-alqaser-tech2.png" alt="شعار القصر تك" class="h-8 w-8 mr-2" style="display:inline-block;vertical-align:middle;">
+                        <span class="text-xl font-bold">القصر تك</span>
+                    </div>
+                    <p class="mt-2 text-blue-200">محل التكنولوجيا وأنظمة المراقبة وأجهزة الشبكات</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-blue-200 hover:text-white">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-200 hover:text-white">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-200 hover:text-white">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/967771314930" class="text-blue-200 hover:text-white">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-blue-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-200 text-sm mb-4 md:mb-0">© 2025 القصر تك. جميع الحقوق محفوظة.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-blue-200 hover:text-white text-sm">سياسة الخصوصية</a>
+                    <a href="#" class="text-blue-200 hover:text-white text-sm">شروط الاستخدام</a>
+                    <a href="#" class="text-blue-200 hover:text-white text-sm">الأسئلة الشائعة</a>
+                </div>
+            </div>
+            <div class="mt-4 text-center text-blue-200 text-sm">
+                تم التطوير بواسطة <a href="https://wa.me/967773412760" class="text-white hover:underline">م | علي محمد</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/967771314930" class="fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
