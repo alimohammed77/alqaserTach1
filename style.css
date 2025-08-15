@@ -1,3 +1,48 @@
+/* شعار القصر تك - إطار متناسق وأنميشن احترافي */
+.floating-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px 0 #0941b833, 0 1.5px 8px 0 #0941b822;
+  animation: floating-logo-bounce 3.5s ease-in-out infinite, floating-logo-glow 2.5s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+  background: transparent;
+}
+.floating-logo-img:hover {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 0 0 0 #0941b8, 0 0 32px 6px #0941b855;
+}
+.floating-logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 #0941b8, 0 0 16px 2px #0941b822;
+  animation: floating-logo-glow 2.5s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+.floating-logo-wrapper:hover .floating-logo-img {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 0 0 0 #0941b8, 0 0 32px 6px #0941b855;
+}
+@keyframes floating-logo-bounce {
+  0%   { transform: translateY(0); }
+  10%  { transform: translateY(-2px); }
+  20%  { transform: translateY(-5px); }
+  30%  { transform: translateY(-8px); }
+  40%  { transform: translateY(-10px); }
+  50%  { transform: translateY(-12px); }
+  60%  { transform: translateY(-10px); }
+  70%  { transform: translateY(-8px); }
+  80%  { transform: translateY(-5px); }
+  90%  { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+@keyframes floating-logo-glow {
+  0%, 100% { box-shadow: 0 0 0 0 #0941b8, 0 0 16px 2px #0941b822; }
+  50%      { box-shadow: 0 0 0 8px #0941b822, 0 0 32px 8px #0941b855; }
+}
 /* زر واتساب وأزرار البطاقات - مظهر متجاوب ومرتب */
 .product-card button,
 .product-card .whatsapp-btn,
